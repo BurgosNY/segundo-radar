@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Segundo radar — projeto em construção na oficina Da Ideia ao Protótipo com IA no jornalismo, REC’n’Play 2026.">
+  <title>Segundo radar</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; color: #191725; background: #faf9f6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; display: flex; flex-direction: column; }
+    header, main, .footer-inner { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+    header { padding-block: 30px; display: flex; justify-content: space-between; gap: 24px; border-bottom: 1px solid #ddd9e2; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+    .project { color: #6420d8; font-weight: 700; }
+    main { flex: 1; padding-block: clamp(80px, 15vh, 180px); }
+    h1 { font-size: clamp(48px, 8vw, 96px); letter-spacing: -.065em; line-height: 1; font-weight: 600; margin: 0 0 25px; }
+    .status { display: flex; align-items: center; gap: 9px; margin: 0; font-size: 15px; color: #65616e; }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #7838dc; }
+    footer { border-top: 1px solid #ddd9e2; background: #fff; }
+    .footer-inner { padding-block: 26px; }
+    .credit { font-size: 13px; color: #65616e; line-height: 1.6; margin: 0 0 22px; }
+    .logos { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .logos a { display: inline-flex; align-items: center; }
+    .logos a:focus-visible { outline: 2px solid #6420d8; outline-offset: 6px; }
+    .codesinfo { width: 150px; height: auto; }
+    .recnplay { width: 70px; height: 70px; object-fit: contain; }
+    .sponsor { margin-left: auto; display: flex; flex-direction: column; gap: 9px; }
+    .sponsor-label { font-size: 11px; color: #65616e; }
+    .gni { width: 220px; max-width: 100%; height: auto; }
+    @media (max-width: 600px) {
+      header, main, .footer-inner { width: calc(100% - 40px); }
+      header { padding-block: 22px; font-size: 10px; }
+      header span:last-child { text-align: right; }
+      main { padding-block: 88px 120px; }
+      .logos { gap: 26px; }
+      .sponsor { margin-left: 0; flex-basis: 100%; padding-top: 8px; }
+    }
+  main{padding-block:48px}h1{font-size:clamp(40px,6vw,70px)}.intro{max-width:680px;font-size:19px;line-height:1.6}.notice{background:#eee5ff;padding:16px;border-radius:12px;font-size:14px;line-height:1.5}.controls{display:flex;gap:12px;margin:30px 0;flex-wrap:wrap}input,select,button{font:inherit;padding:12px;border:1px solid #ccc;border-radius:8px}button{cursor:pointer;background:#6420d8;color:white;border:0}input{flex:1;min-width:180px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}article{background:white;border:1px solid #ddd9e2;border-radius:16px;padding:24px}article h2{font-size:24px;letter-spacing:-.03em}article p{line-height:1.6}.tag{font-size:12px;color:#6420d8;font-weight:bold}.detail{border-top:1px solid #ddd;padding-top:12px}summary{cursor:pointer;font-weight:bold}.saved{background:#205848}.empty{padding:30px}form{margin:32px 0;padding:24px;background:#f0eee8;border-radius:16px}form label{display:block;margin:14px 0 6px}form input{width:100%}small{display:block;margin-top:12px;color:#65616e}@media(prefers-reduced-motion:no-preference){article{animation:rise .4s ease both}@keyframes rise{from{opacity:0;transform:translateY(12px)}}}</style>
+</head>
+<body>
+  <header><span class="project">Segundo radar</span><span>REC’n’Play · Recife · 2026</span></header>
+<main>
+<p class="tag">GRUPO 7 · LABORATÓRIO EDITORIAL</p><h1>A pauta de hoje.<br>O impacto de amanhã.</h1>
+<p class="intro">Um radar para conectar urgência, interesse público e mudanças que ainda vão chegar. Salve ideias e organize o próximo passo da apuração.</p>
+<section aria-label="Recorte editorial" class="controls"><label>Região / localidade<br><input id="region" placeholder="Ex.: Recife, Brasília, São Paulo"></label><label>Editoria<br><select id="desk"><option value="">Todas</option><option>Política</option><option>Economia</option><option>Educação</option><option>Saúde</option><option>Cultura</option><option>Meio ambiente</option></select></label><label>Buscar assunto<br><input id="query-real" placeholder="Palavra-chave nas fontes"></label><button id="search-real">Buscar</button><button id="clear-real">Limpar filtros</button></section><p id="scope" class="notice">Escolha seu recorte. Região busca menções explícitas nos títulos e referências coletados; não usa sua localização e não comprova impacto local. Editoria usa palavras-chave, não classificação verificada.</p><div class="notice"><strong>Protótipo demonstrativo.</strong> Os exemplos abaixo são hipóteses editoriais, não notícias verificadas. Status: pista a apurar = sem checagem; conferido na fonte = cotejado com fonte original; divergência = fontes conflitantes; hipótese = interpretação a investigar. Nesta versão, nenhum item foi conferido automaticamente. Há uma captura pontual de feeds públicos abaixo; ainda não há rotina diária, IA ou envio de notificações ativo. Itens salvos ficam apenas neste navegador.</div>
+<section class="notice" style="margin-top:20px;background:#fff;border:1px solid #ddd"><strong>Quatro portas de entrada · Brasil</strong><p>Agora: urgências e desdobramentos. Depois: votações, vigências e eventos. Calendário: marcos nacionais e internacionais. Em profundidade: histórias pouco exploradas e conexões.</p><details><summary>Como alimentar o radar</summary><p><b>Fontes propostas, ainda não conectadas:</b> diários oficiais e portais legislativos para decisões; agendas de tribunais e órgãos públicos para próximos marcos; calendários de organismos internacionais e instituições nacionais para efemérides; bases públicas, pesquisas e relatos locais para pautas frias.</p><p>Cada oportunidade deve guardar fonte original, data da consulta, status do acontecimento, pessoas afetadas, hipótese editorial e o que falta verificar. Uma proposta não é uma aprovação; aprovação não é vigência. O calendário não substitui apuração.</p></details></section><section style="margin:36px 0"><p class="tag">FONTES REAIS · CAPTURA PONTUAL</p><h2>O que está nas fontes</h2><p id="capture">Carregando captura…</p><p>Cobertura brasileira, sem pautas policiais ou esportivas. Repetição não comprova um fato. As sugestões de apuração abaixo são perguntas editoriais, não conclusões.</p><div id="live" class="grid"></div></section><div class="controls"><input id="search" aria-label="Buscar pautas" placeholder="Buscar tema ou palavra-chave"><select id="filter" aria-label="Filtrar pautas"><option value="all">Todas as pautas</option><option>Urgente</option><option>Marco futuro</option><option>Interesse público</option><option>Calendário e efemérides</option><option>Pautas frias e conexões</option><option value="saved">Minha seleção</option></select></div>
+<div id="grid" class="grid" aria-live="polite"></div>
+<form id="form"><h2>Acrescente uma pista</h2><p>Registre uma hipótese ou uma informação que ainda precisa de apuração.</p><label for="title">Tema</label><input id="title" required maxlength="140" placeholder="O que merece uma matéria?"><label for="date">Data a acompanhar (opcional)</label><input id="date" type="date"><label for="source">Fonte para verificar (opcional)</label><input id="source" type="url" placeholder="https://..."><br><br><button>Adicionar ao radar local</button><small>Não insira informações sensíveis. Este protótipo não compartilha a seleção com a equipe. Com uma data, você poderá exportar um compromisso para preparar a pauta três dias antes; alertas automáticos dependerão do seu calendário.</small></form>
+</main>
+  <footer>
+    <div class="footer-inner">
+      <p class="credit">site prototipado durante a oficina Da Ideia ao Protótipo com IA no jornalismo.</p>
+      <div class="logos">
+        <a href="https://codesinfo.com.br/" aria-label="Codesinfo"><img class="codesinfo" src="assets/codesinfo.png" alt="Codesinfo" width="687" height="172"></a>
+        <a href="https://recnplay.pe/" aria-label="REC’n’Play"><img class="recnplay" src="assets/recnplay.png" alt="REC’n’Play" width="500" height="500"></a>
+        <div class="sponsor"><span class="sponsor-label">Patrocínio: Google News Initiative</span><a href="https://newsinitiative.withgoogle.com/"><img class="gni" src="assets/gni.svg" alt="Google News Initiative" width="247" height="28"></a></div>
+      </div>
+    </div>
+  </footer>
+<script>
+const base=[
+{id:'efemeride',title:'Uma data pode revelar o que ainda não mudou',type:'Calendário e efemérides',text:'Exemplo de abordagem: usar uma data temática para investigar políticas e resultados, não apenas produzir uma homenagem.',angle:'Que promessa feita no último ano pode ser confrontada com resultados? Quem pode mostrar a mudança na prática?',check:'Confirmar data e entidade responsável no calendário original. Diferenciar data oficial, campanha e iniciativa privada.',date:''},
+{id:'conexao',title:'O problema silencioso por trás de duas notícias',type:'Pautas frias e conexões',text:'Hipótese editorial: reunir sinais dispersos de um mesmo problema, mesmo sem novidade urgente.',angle:'Cruzar mudanças no atendimento, distribuição territorial e relatos de moradores. A conexão é uma hipótese, não causalidade comprovada.',check:'Conferir séries históricas, comparabilidade e explicações alternativas; ouvir os afetados.',date:''},
+
+{id:'jornada',title:'Mudança na jornada: quem precisa se preparar?',type:'Marco futuro',text:'Exemplo hipotético sugerido pelo grupo: uma mudança para escala 5x2. Aprovação e vigência não foram verificadas.',angle:'Compare impactos para trabalhadores, empresas e serviços públicos. Quem fica de fora?',check:'Localizar texto oficial, etapa de tramitação, abrangência e eventual data de vigência. Não tratar proposta como lei.',date:''},
+{id:'chuva',title:'Quando a chuva vira um problema de serviço público',type:'Urgente',text:'Hipótese de pauta, sem alerta meteorológico real associado.',angle:'Quais bairros e serviços seriam mais afetados? O que a população precisa saber agora?',check:'Consultar boletins oficiais, Defesa Civil e moradores. Confirmar horário, área e validade de qualquer alerta.',date:''},
+{id:'fila',title:'O que uma fila de atendimento revela sobre a cidade?',type:'Interesse público',text:'Pauta permanente: investigar acesso a serviços, mesmo sem um fato novo.',angle:'Quem espera mais? Existem desigualdades por território ou perfil?',check:'Solicitar dados, entender metodologia e ouvir usuários e responsáveis.',date:''}
+];
+let extra=[],saved=[];try{extra=JSON.parse(localStorage.getItem('sr-items')||'[]');saved=JSON.parse(localStorage.getItem('sr-saved')||'[]')}catch{}
+const el=id=>document.getElementById(id);function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function prep(d){let t=new Date(d+'T12:00:00Z');t.setUTCDate(t.getUTCDate()-3);return t.toISOString().slice(0,10)}
+function calendar(x){let date=prep(x.date).replaceAll('-','');let data=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SegundoRadar//Oficina//PT','BEGIN:VEVENT','UID:'+x.id+'@segundo-radar','DTSTART;VALUE=DATE:'+date,'SUMMARY:Preparar pauta (verificar): '+x.title.replace(/[\n\r,;]/g,' '),'DESCRIPTION:Evento indicado para '+x.date+'. Verifique fonte e data antes de publicar.','END:VEVENT','END:VCALENDAR'].join('\r\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'text/calendar'}));a.download='preparar-pauta.ics';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function render(){let q=el('search').value.toLowerCase(),f=el('filter').value;let rows=[...base,...extra].filter(x=>(x.title+' '+x.text).toLowerCase().includes(q)&&(f==='all'||(f==='saved'?saved.includes(x.id):x.type===f)));el('grid').innerHTML=rows.map(x=>'<article><span class="tag">'+esc(x.type)+' · PISTA A APURAR</span><h2>'+esc(x.title)+'</h2><p>'+esc(x.text)+'</p>'+(x.date?'<p><strong>Data a verificar: '+esc(x.date)+'</strong></p><p>Preparar pauta em: '+esc(prep(x.date))+'</p><button data-calendar="'+esc(x.id)+'">Exportar lembrete · 3 dias antes</button><small>Baixe e importe no seu calendário. O site não envia avisos.</small>':'')+'<details class="detail"><summary>Como transformar em matéria</summary><p>'+esc(x.angle)+'</p><strong>Antes de publicar</strong><p>'+esc(x.check)+'</p>'+(x.source?'<p>Fonte indicada: '+esc(x.source)+'</p>':'')+'</details><br><button data-id="'+esc(x.id)+'" class="'+(saved.includes(x.id)?'saved':'')+'">'+(saved.includes(x.id)?'✓ Na minha seleção':'Salvar pauta')+'</button></article>').join('')||'<p class="empty">Nenhuma pauta nesta seleção.</p>'}
+el('grid').onclick=e=>{if(e.target.dataset.calendar){calendar([...base,...extra].find(x=>x.id===e.target.dataset.calendar));return}let id=e.target.dataset.id;if(!id)return;saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];try{localStorage.setItem('sr-saved',JSON.stringify(saved))}catch{}render()};
+el('search').oninput=render;el('filter').onchange=render;el('form').onsubmit=e=>{e.preventDefault();extra.push({id:'local-'+Date.now(),title:el('title').value,type:el('date').value?'Marco futuro':'Interesse público',date:el('date').value,source:el('source').value,text:'Pista adicionada por você. Informação ainda não verificada.',angle:'Defina quem é afetado e qual pergunta a reportagem precisa responder.',check:'Verifique a fonte original e procure evidência independente.'});try{localStorage.setItem('sr-items',JSON.stringify(extra))}catch{}e.target.reset();el('filter').value='all';el('search').value='';render()};render();
+
+fetch('radar-data.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{
+document.getElementById('capture').textContent='Captura: '+d.collectedAt+' · '+d.items.length+' registros. Fontes: '+d.sources.map(x=>x.name+' ('+x.status+')').join(', ')+'. Não é atualização contínua.';
+window.radarData=d;renderReal();
+}).catch(()=>document.getElementById('capture').textContent='Não foi possível carregar a captura. Isso não significa ausência de notícias.');
+const deskWords={'Política':['ministro','justiça','fachin','política','governo','congresso'],'Economia':['econôm','inadimpl','agro','bb','mercado'],'Educação':['enem','educação','escola'],'Saúde':['saúde','médico','uti','inss'],'Cultura':['festival','jogos','rec’n’play','recife','cinema'],'Meio ambiente':['chuva','verão','el niño','incêndio']};
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+function matchesReal(x,region,desk,q){const text=norm(x.title+' '+x.related.map(n=>n.news_item_title||'').join(' '));return x.country==='BR'&&x.scopeReviewed&&(!region||text.includes(norm(region)))&&(!q||text.includes(norm(q)))&&(!desk||deskWords[desk].some(w=>text.includes(norm(w))))}
+function renderReal(){const d=window.radarData;if(!d)return;const region=el('region').value.trim(),desk=el('desk').value,q=el('query-real').value.trim();const rows=d.items.filter(x=>matchesReal(x,region,desk,q));el('scope').textContent=rows.length+' registros no recorte'+(region?' · menção textual a '+region:'')+'. Filtro de editoria por palavras-chave; relevância e impacto local ainda precisam de apuração.';
+document.getElementById('live').innerHTML=rows.slice().sort((a,b)=>b.related.length-a.related.length).slice(0,16).map(x=>'<article><span class="tag">'+esc(x.source)+' · APURAÇÃO PENDENTE</span><h2>'+esc(x.title)+'</h2><small>'+esc(x.publishedAt)+'</small><p><a target="_blank" rel="noopener" href="'+esc(x.url)+'">Abrir fonte original ↗</a></p>'+(x.related.length?'<p>'+x.related.length+' referências associadas pelo feed (não necessariamente independentes).</p><ul>'+x.related.slice(0,3).map(n=>'<li><a target="_blank" rel="noopener" href="'+esc(n.news_item_url||'')+'">'+esc(n.news_item_source||'Fonte')+': '+esc(n.news_item_title||'')+'</a></li>').join('')+'</ul>':'')+'<details open><summary>3 abordagens editoriais</summary><ol>'+((x.approaches||[]).map(a=>'<li style="margin:12px 0">'+esc(a)+'</li>').join('')||'<li>Este assunto aguarda curadoria editorial.</li>')+'</ol><small>Propostas editoriais baseadas no título publicado, não conclusões apuradas. Menção local não garante relevância ou repercussão na região.</small></details></article>').join('')||'<p class="empty">Nenhum registro desta captura combina com o recorte. Isso não significa ausência de pautas nessa região. Tente o nome de uma cidade ou limpe os filtros.</p>';
+}
+el('search-real').onclick=renderReal;el('clear-real').onclick=()=>{['region','desk','query-real'].forEach(id=>el(id).value='');renderReal()};
+
+</script></body>
+</html>
